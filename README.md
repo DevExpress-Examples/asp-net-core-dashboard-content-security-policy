@@ -2,14 +2,57 @@
 
 This example demonstrates how to implement a nonce-based [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) for a ASP.NET Core Application.
 
+
 ## Example Overview
 
+In a page model (*DashboardModel.cs*), genereate the nonce value. In this example, the [RandomNumberGenerator](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-6.0) class is used to generate cryptographically strong random values. 
 
+```cs
+//...
+public string Nonce { get; set; }
+public DashboardModel() {
+    var nonceBytes = new byte[32];
+    var generator = RandomNumberGenerator.Create();
+    generator.GetBytes(nonceBytes);
+    Nonce = Convert.ToBase64String(nonceBytes);
+}
+```
+
+In the `OnGet` handler method, add a HTTP header with the Content Security Policy with the nonce for the `script-src` and `style-src` directives:
+
+```cs
+public IActionResult OnGet() {
+    HttpContext.Response.Headers.Add("Content-Security-Policy",
+        "img-src data: https: http:;" +
+        string.Format("script-src 'self' 'nonce-{0}';", Nonce) +
+        string.Format("style-src 'self' 'nonce-{0}';", Nonce) 
+            );
+    return Page();
+}
+```
+The new nonce value is generated each time the page loads. 
+
+On the page (*Index.cshtml*), add the `@model` directive and pass the nonce value to `Nonce` method:
+
+```html
+@page
+@model CSPDashboardExample.Models.DashboardModel
+
+<div class="my-dashboard-container">
+@(Html.DevExpress().Dashboard("dashboardControl1")
+    .ControllerName("DefaultDashboard")
+    .Nonce(Model.Nonce)
+    .Width(null)
+    .Height(null)
+    .OnBeforeRender("onBeforeRender")
+)
+</div>
+```
 
 ## Files to Review
 
-- [DashboardModel.cs](.\CS\CSPDashboardExample\Models\DashboardModel.cs)
-- [Index.cshtml](.CS\CSPDashboardExample\Pages\Index.cshtml)
+- [DashboardModel.cs](./CS/CSPDashboardExample/Models/DashboardModel.cs)
+- [Index.cshtml](./CS/CSPDashboardExample/Pages/Index.cshtml)
 
 <!-- ## Documentation
 
