@@ -1,0 +1,12 @@
+﻿@page
+@model CSPDashboardExample.Models.DashboardModel
+
+<div class="my-dashboard-container">
+@(Html.DevExpress().Dashboard("dashboardControl1")
+    .ControllerName("DefaultDashboard")
+    .Nonce(Model.Nonce)
+    .Width(null)
+    .Height(null)
+    .OnBeforeRender("onBeforeRender")
+)
+</div>

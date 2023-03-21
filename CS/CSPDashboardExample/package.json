@@ -1,0 +1,10 @@
+{
+    "name": "cspdashboardexample",
+    "version": "1.0.0",
+    "private": true,
+  "dependencies": {
+    "devextreme": "23.1.*-*",
+    "@devexpress/analytics-core": "23.1.*-*",
+    "devexpress-dashboard": "23.1.*-*"
+  }
+}
