@@ -14,6 +14,7 @@ Use the nonce-based approach to disallow inline script and style execution.
 In a page model (*DashboardModel.cs*), genereate the nonce value. In this example, the [RandomNumberGenerator](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-6.0) class is used to generate cryptographically strong random values. 
 
 ```cs
+using System.Security.Cryptography;
 //...
 public string Nonce { get; set; }
 public DashboardModel() {
