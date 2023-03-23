@@ -5,8 +5,9 @@
 <!-- default badges end -->
 # Dashboard for ASP.NET Core - Content Security Policy (CSP)
 
-This example demonstrates how to implement a nonce-based [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) for a ASP.NET Core Application.
+This example demonstrates how to implement a nonce-based [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) for an ASP.NET Core Application with Razor Pages through a HTTP response header.
 
+Use the nonce-based approach to disallow inline script and style execution.
 
 ## Example Overview
 
@@ -17,7 +18,7 @@ In a page model (*DashboardModel.cs*), genereate the nonce value. In this exampl
 public string Nonce { get; set; }
 public DashboardModel() {
     var nonceBytes = new byte[32];
-    var generator = RandomNumberGenerator.Create();
+    using var generator = RandomNumberGenerator.Create();
     generator.GetBytes(nonceBytes);
     Nonce = Convert.ToBase64String(nonceBytes);
 }
