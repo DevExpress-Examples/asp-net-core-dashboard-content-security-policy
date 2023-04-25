@@ -11,7 +11,7 @@ Use the nonce-based approach to disallow inline script and style execution.
 
 ## Example Overview
 
-In a page model (*DashboardModel.cs*), genereate the nonce value. In this example, the [RandomNumberGenerator](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-6.0) class is used to generate cryptographically strong random values. 
+In a page model (*DashboardModel.cs*), generate the nonce value. In this example, the [RandomNumberGenerator](https://learn.microsoft.com/en-us/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-6.0) class is used to generate cryptographically strong random values. 
 
 ```cs
 using System.Security.Cryptography;
@@ -19,13 +19,13 @@ using System.Security.Cryptography;
 public string Nonce { get; set; }
 public DashboardModel() {
     var nonceBytes = new byte[32];
-    using var generator = RandomNumberGenerator.Create();
+    var generator = RandomNumberGenerator.Create();
     generator.GetBytes(nonceBytes);
     Nonce = Convert.ToBase64String(nonceBytes);
 }
 ```
 
-In the `OnGet` handler method, add a HTTP header with the Content Security Policy with the nonce for the `script-src` and `style-src` directives:
+In the `OnGet` handler method, add a HTTP header with the Content Security Policy with the nonce for `script-src` and `style-src` directives:
 
 ```cs
 public IActionResult OnGet() {
