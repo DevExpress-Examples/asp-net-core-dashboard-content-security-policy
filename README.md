@@ -61,6 +61,6 @@ On the page (*Index.cshtml*), add the `@model` directive and pass the nonce valu
 - [DashboardModel.cs](./CS/CSPDashboardExample/Models/DashboardModel.cs)
 - [Index.cshtml](./CS/CSPDashboardExample/Pages/Index.cshtml)
 
-<!-- ## Documentation
+## Documentation
 
-- [Content Security Policy in ASP.NET Core Applications](https://docs.devexpress.com/Dashboard/404187) -->
+- [Content Security Policy in ASP.NET Core Applications](https://docs.devexpress.com/Dashboard/404187)
