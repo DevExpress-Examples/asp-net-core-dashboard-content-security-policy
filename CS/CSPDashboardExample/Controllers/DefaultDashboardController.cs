@@ -1,4 +1,4 @@
-﻿using CSPDashboardExample.Models;
+using CSPDashboardExample.Models;
 using DevExpress.DashboardAspNetCore;
 using DevExpress.DashboardWeb;
 using Microsoft.AspNetCore.DataProtection;

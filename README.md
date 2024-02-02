@@ -1,5 +1,5 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/616836996/23.1.1%2B)
+![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/616836996/2023.1)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1154893)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
@@ -61,6 +61,6 @@ On the page (*Index.cshtml*), add the `@model` directive and pass the nonce valu
 - [DashboardModel.cs](./CS/CSPDashboardExample/Models/DashboardModel.cs)
 - [Index.cshtml](./CS/CSPDashboardExample/Pages/Index.cshtml)
 
-<!-- ## Documentation
+## Documentation
 
-- [Content Security Policy in ASP.NET Core Applications](https://docs.devexpress.com/Dashboard/404187) -->
+- [Content Security Policy in ASP.NET Core Applications](https://docs.devexpress.com/Dashboard/404187)
