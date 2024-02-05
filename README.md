@@ -3,7 +3,7 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T1154893)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# Dashboard for ASP.NET Core - Content Security Policy (CSP)
+# BI Dashboard for ASP.NET Core - Content Security Policy (CSP)
 
 This example demonstrates how to implement a nonce-based [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP) for an ASP.NET Core Application with Razor Pages through a HTTP response header.
 
