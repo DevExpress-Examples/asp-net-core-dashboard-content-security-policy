@@ -31,7 +31,7 @@ In the `OnGet` handler method, add a HTTP header with the Content Security Polic
 ```cs
 public IActionResult OnGet() {
     HttpContext.Response.Headers.Add("Content-Security-Policy",
-        "img-src data: https: http:;" +
+        "img-src 'self' data:;" +
         string.Format("script-src 'self' 'nonce-{0}';", Nonce) +
         string.Format("style-src 'self' 'nonce-{0}';", Nonce) 
             );
