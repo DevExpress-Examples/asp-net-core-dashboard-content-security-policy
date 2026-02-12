@@ -66,7 +66,7 @@ On the page (*Index.cshtml*), add the `@model` directive and pass the nonce valu
 
 - [Content Security Policy in ASP.NET Core Applications](https://docs.devexpress.com/Dashboard/404187)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-core-dashboard-content-security-policy&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=asp-net-core-dashboard-content-security-policy&~~~was_helpful=no)
 
